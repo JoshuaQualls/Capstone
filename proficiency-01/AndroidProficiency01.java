@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import java.sql.Timestamp;
 
-public class AndroidProficency01 extends AppCompatActivity {
+public class AndroidProficiency01 extends AppCompatActivity {
     TextView tv = (TextView)findViewById(R.id.test);
 
 
