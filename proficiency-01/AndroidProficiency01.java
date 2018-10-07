@@ -13,7 +13,7 @@ public class AndroidProficiency01 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_android_proficency01);
+        setContentView(R.layout.activity_android_proficiency01);
 
         Long tsLong = System.currentTimeMillis();
         Timestamp t = new Timestamp(tsLong);
