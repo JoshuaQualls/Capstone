@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BarInfo"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/bar_header"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/kok_twitter_header"/>
+
+    <LinearLayout
+        android:id="@+id/bar_info_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:background="@drawable/black_overlay">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"/>
+
+            <TextView
+                android:id="@+id/barName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingStart="15dp"
+                android:paddingLeft="15dp"
+                android:text="@string/bar_name"
+                android:textColor="@color/white"
+                android:textSize="33sp"
+                app:fontFamily="@font/open_sans_bold" />
+
+            <TextView
+                android:id="@+id/bar_info_cover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="15dp"
+                android:paddingLeft="15dp"
+                android:text="@string/bar_cover"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:fontFamily="@font/open_sans" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/bar_name"
+        />
+
+    <LinearLayout
+        android:id="@+id/bar_info_friends_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bar_info_overlay"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Friends"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:fontFamily="@font/open_sans_semibold" />
+
+        <HorizontalScrollView
+            android:id="@+id/bar_info_friends_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            >
+            <LinearLayout
+                android:id="@+id/bar_info_friends_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:animateLayoutChanges="true"/>
+
+
+
+        </HorizontalScrollView>
+        <LinearLayout
+            android:id="@+id/bar_info_no_friends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:animateLayoutChanges="true">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:tint="@color/white"
+                android:layout_gravity="center"
+                android:src="@drawable/bb_no_results"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="No Friends"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/bar_info_friends_section"
+        android:background="?android:attr/listDivider"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Deals"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:fontFamily="@font/open_sans_semibold" />
+
+        <ScrollView
+            android:id="@+id/deals_scroll_view"
+            android:layout_width="wrap_content"
+            android:layout_height="320dp"
+            android:layout_marginTop="5dp"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdgeLength="10dp">
+            <LinearLayout
+                android:id="@+id/bar_info_deals_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true"
+                />
+
+
+        </ScrollView>
+        <TextView
+            android:id="@+id/bar_info_no_deals"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:text="No Deals"
+            android:textSize="40dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:paddingBottom="20dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/check_in_button"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:src="@drawable/bb_white_button"
+            android:tint="#004080"/>
+
+        <TextView
+            android:id="@+id/check_in_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHECK IN"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:fontFamily="@font/open_sans_semibold"
+            app:layout_constraintEnd_toEndOf="@id/check_in_button"
+            app:layout_constraintStart_toStartOf="@id/check_in_button"
+            app:layout_constraintTop_toTopOf="@id/check_in_button"
+            app:layout_constraintBottom_toBottomOf="@id/check_in_button"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</RelativeLayout>

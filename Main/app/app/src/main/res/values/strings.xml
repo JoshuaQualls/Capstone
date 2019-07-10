@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BarBuds</string>
+    <string name="facebook_app_id">351653712321512</string>
+    <string name="fb_login_protocol_scheme">351653712321512</string>
+    <string name="title_activity_main">BarBuds</string>
+    <string name="user_name">Your Name</string>
+    <string name="deals_redeemed">Deals Redeemed: 10</string>
+    <string name="bar_name">Kilroy\'s on Kirkwood</string>
+    <string name="bar_cover">cover: $5</string>
+</resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmailLog"
+    android:background="@color/colorPrimaryDark">
+
+    <RelativeLayout
+        android:id="@+id/email_log_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="64dp"
+            android:typeface="monospace"
+            app:fontFamily="cursive" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email_log_logo"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom">
+
+        <LinearLayout
+            android:id="@+id/email_log_email_view"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bb_opaque_text_field_background"
+            android:layout_below="@id/reg_password_view"
+            android:layout_marginTop="100dp">
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/bb_person_24px"
+                android:tint="#585858"
+                android:layout_gravity="center_vertical"
+                />
+
+            <EditText
+                android:id="@+id/email_log_email_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textColorHint="#585858"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/email_log_password_view"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bb_opaque_text_field_background"
+            android:layout_below="@id/email_log_email_view"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/bb_lock"
+                android:tint="@color/gray"
+                android:layout_gravity="center_vertical"
+                />
+
+            <EditText
+                android:id="@+id/email_log_password_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:background="@null"
+                android:hint="Password"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/email_log_login_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@id/email_log_password_view"
+            android:layout_centerInParent="true">
+            <ImageButton
+                android:id="@+id/email_log_login_button"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:cropToPadding="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bb_white_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/email_log_login_button"
+                app:layout_constraintBottom_toBottomOf="@id/email_log_login_button"
+                app:layout_constraintStart_toStartOf="@id/email_log_login_button"
+                app:layout_constraintEnd_toEndOf="@id/email_log_login_button"
+                android:text="LOG IN"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:fontFamily="@font/open_sans_semibold" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/log_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

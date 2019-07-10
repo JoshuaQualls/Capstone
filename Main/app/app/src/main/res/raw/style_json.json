@@ -1,0 +1,50 @@
+[
+    {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [
+            {
+                "invert_lightness": true
+            },
+            {
+                "saturation": 10
+            },
+            {
+                "lightness": 30
+            },
+            {
+                "gamma": 0.5
+            },
+            {
+                "hue": "#435158"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    }
+]

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Groups"
+    android:background="@color/colorPrimaryDark"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:id="@+id/groups_faux_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:animateLayoutChanges="true">
+        <ImageView
+            android:id="@+id/navigationButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/bb_menu_24px"
+            android:padding="15dp"
+            android:tint="@color/white"
+            android:layout_gravity="center|start"
+            android:clickable="true"
+            android:focusable="true" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/create_group_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bb_group_add_24px"
+            android:tint="@color/white"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/create_group_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/groups_faux_header"
+        android:gravity="center"
+        android:text="Create a Group!"
+        android:textSize="40dp"
+        app:fontFamily="@font/open_sans_semibold"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/bar_header"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_below="@id/groups_faux_header"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/kok_twitter_header"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/group_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_below="@id/groups_faux_header"
+        android:background="@drawable/black_overlay"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"/>
+
+            <TextView
+                android:id="@+id/barName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingStart="15dp"
+                android:paddingLeft="15dp"
+                android:text="@string/bar_name"
+                android:textColor="@color/white"
+                android:textSize="33sp"
+                app:fontFamily="@font/open_sans_bold"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/bar_cover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="15dp"
+                android:paddingLeft="15dp"
+                android:text="@string/bar_cover"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:fontFamily="@font/open_sans"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/group_friends_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_overlay"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Members"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:fontFamily="@font/open_sans_semibold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            >
+            <LinearLayout
+                android:id="@+id/group_friends_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:animateLayoutChanges="true"/>
+
+
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/group_friends_section"
+        android:background="?android:attr/listDivider"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/group_deals_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Deals"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:fontFamily="@font/open_sans_semibold" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="320dp"
+            android:layout_marginTop="5dp"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdgeLength="15dp">
+            <LinearLayout
+                android:id="@+id/group_deals_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true"/>
+
+
+        </ScrollView>
+        <TextView
+            android:id="@+id/bar_info_no_deals"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:text="No Deals"
+            android:textSize="40dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        >
+
+        <ImageView
+            android:id="@+id/disband_group_button"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:src="@drawable/bb_white_button"
+            android:tint="#c0392b"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/disband_group_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DISBAND GROUP"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:fontFamily="@font/open_sans_semibold"
+            app:layout_constraintEnd_toEndOf="@id/disband_group_button"
+            app:layout_constraintStart_toStartOf="@id/disband_group_button"
+            app:layout_constraintTop_toTopOf="@id/disband_group_button"
+            app:layout_constraintBottom_toBottomOf="@id/disband_group_button"
+            android:visibility="gone"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+</RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/darkGray"
+        android:layout_gravity="start">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:fitsSystemWindows="false">
+            <LinearLayout
+                android:id="@+id/groups_profile_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/shadow"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/navigation_profile_pic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/bb_profile_picture"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_name"
+                        android:textSize="24sp"
+                        app:fontFamily="@font/open_sans_semibold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deals_redeemed"
+                        app:fontFamily="@font/open_sans_semibold"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="end"
+                android:layout_weight="2">
+                <LinearLayout
+                    android:id="@+id/groups_map_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:paddingBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:tint="@color/white"
+                        android:src="@drawable/ic_map_24px"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Map"
+                        android:textSize="30sp"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/open_sans_semibold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/groups_friends_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:tint="@color/white"
+                        android:src="@drawable/bb_person_24px"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Friends"
+                        android:textSize="30sp"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/open_sans_semibold" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:tint="@color/white"
+                        android:src="@drawable/bb_group_24px"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_gravity="center" />
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="My Group"
+                        android:textSize="30sp"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/open_sans_semibold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/groups_notifications_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:tint="@color/white"
+                        android:src="@drawable/bb_inbox_24px"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_gravity="center_vertical"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Notifications"
+                        android:textSize="30sp"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/open_sans_semibold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/logout_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_gravity="end|bottom|center"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:paddingBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:paddingRight="6dp"
+                    android:paddingBottom="1dp"
+                    android:text="LOG OUT"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/open_sans_semibold" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:background="@null"
+                    android:src="@drawable/logout_variant"
+                    android:tint="@color/white"
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>

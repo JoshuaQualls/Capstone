@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:paddingLeft="15dp"
+    android:paddingStart="15dp"
+    android:paddingRight="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/deal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:srcCompat="@drawable/bb_profile_picture"
+        android:text="15% Off Drinks"
+        android:textColor="@color/white"
+        android:textSize="22sp"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <ImageView
+        android:id="@+id/group_icon"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/bb_group_24px"
+        android:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/deal_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:text="1"
+        android:textColor="@color/white" />
+</LinearLayout>
