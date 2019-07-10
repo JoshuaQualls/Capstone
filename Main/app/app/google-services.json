@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1067390893448",
+    "firebase_url": "https://barbuds-90ef7.firebaseio.com",
+    "project_id": "barbuds-90ef7",
+    "storage_bucket": "barbuds-90ef7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067390893448:android:72f1bafe38c96cd1",
+        "android_client_info": {
+          "package_name": "com.example.tedge.barbuds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067390893448-8jimgndqibh6h16fso9p2bc5629lhh06.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tedge.barbuds",
+            "certificate_hash": "9e0cb319112581107cf07228968bb63ac754d541"
+          }
+        },
+        {
+          "client_id": "1067390893448-a7em82fmf6g76hge6vokafs4fr7jnp49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbMYRGTBGjyWXlrM3A7LGS6-yqA8v_efA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067390893448-a7em82fmf6g76hge6vokafs4fr7jnp49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
